@@ -1,0 +1,107 @@
+<div class="nav-bar">
+  <div class="nav-bar-left">
+    <a class="nav-bar-logo" routerLink="/"
+      ><img
+        class="logo img-responsive"
+        src="https://et710.com/website/war2/img/navbar-logo.jpg"
+    /></a>
+  </div>
+  <div class="nav-bar-right">
+    <ul class="menu">
+      <li class="hide-for-small-only"><a href="index.html"></a></li>
+      <li></li>
+      <li>
+        <button
+          type="button"
+          class="offcanvas-trigger"
+          data-open="offCanvasRight"
+          [attr.aria-expanded]="!isOffcanvas"
+          aria-controls="offCanvasMenuRight"
+          (click)="offcanvasRight.show()"
+        >
+          <span class="offcanvas-trigger-text hide-for-small-only">Menu</span>
+          <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Position Right -->
+<div
+  [offcanvas]="isOffcanvas"
+  class="off-canvas position-right"
+  id="offCanvasMenuRight"
+  aria-hidden="true"
+  #offcanvasRight="bs-offcanvas"
+>
+  <ul class="menu vertical">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/" class="button fancy-button">
+        Home
+      </a>
+    </li>
+  </ul>
+
+  <ul class="menu vertical">
+    <a class="button fancy-button">Art </a>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/graphic" class="button fancy-button">
+        Graphic Design
+      </a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/indesign" class="button fancy-button">
+        Indesign
+      </a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/digitalart" class="button fancy-button">
+        Digital Art
+      </a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/illustration" class="button fancy-button">
+        Illustrations
+      </a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/paintings" class="button fancy-button">
+        Paintings
+      </a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/aboutme" class="button fancy-button">
+        ABOUT ME
+      </a>
+    </li>
+
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/contactme" class="button fancy-button">
+        CONTACT ME
+      </a>
+    </li>
+  </ul>
+
+  <button
+    class="close-button"
+    aria-label="Close Menu"
+    aria-controls="offCanvasMenu"
+    type="button"
+    (click)="offcanvasRight.hide()"
+  >
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+
+<!---------------------------->
